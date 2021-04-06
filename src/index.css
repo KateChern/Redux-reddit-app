@@ -11,3 +11,355 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+.postLink {
+ color: black;
+}
+.post-content {
+  display: block;
+  max-width: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.2rem;
+  padding: 0 1.5rem;
+  background-color: rgb(227, 229, 250);
+  border: rgb(141, 117, 172) solid 1px;
+  
+}
+.postContent {
+  margin:0vh 1.5vh 0vh 2.7vh;
+  padding: 1.5vh;
+  
+}
+.post-media {
+  overflow: hidden;
+  text-align: center;
+}
+.userInfo {
+  display: flex;
+  
+}
+.image {
+  width: 100%;
+}
+
+.post-image {
+  transform: scale(2,2);
+  width: 50%;
+  text-align: center;
+  transition: all 0.3s ease ;  
+  z-index: -1;
+}
+
+.post-image:hover {
+  width: 100%;
+  transform: none;
+  transition: all 0.3s ease  ;
+}
+.video {
+  transform: scale(1.5,1.5);
+  width: 100%;
+  text-align: center;
+  transition: all 0.2s ease ;  
+  z-index: -1;
+  height: 30vh;
+}
+.video:hover {
+  width: 100%;
+  transform: none;
+  transition: all 0.2s ease  ;
+  height: 60vh;
+
+}
+
+.avatar-profile-image {
+  margin-top: 1rem;
+  width: 3vh;
+}
+.userName {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+
+.postInfo, .commentInfo {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.likes {
+  margin-right: 2.2rem;
+}
+
+.post-title {
+  margin-top: 1rem auto;
+  
+}
+.postLink {
+  text-decoration: none;
+}
+.subredditTitle {
+  max-width: 550px;
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.readmore {
+  font-weight: 700;
+}
+.postUrl  {
+  text-decoration: none;
+  color: black;
+  font-weight: 550;
+  margin-bottom: 20rem;
+  text-align: left;
+}
+
+@media only screen and (min-width: 1000px) {
+  .post-content {
+    max-width: 70vh;
+    transition: 0.3s;
+  }
+}
+/*-------------------Comments-------------------------------*/ 
+
+.comment-metadata {
+  display: flex;
+  justify-content: start; 
+}
+.comment-author {
+  font-size: 0.75rem;
+  margin-right: 0.6rem;
+  color: rgb(59, 59, 59);
+  margin-bottom: 0rem;
+}
+.subComment-author {
+  font-size: 0.75rem;
+  margin-right: 0.6rem;
+  color: rgb(59, 59, 59);
+  margin-bottom: 0rem;
+}
+
+.comment-created-time {
+  font-size: 0.6rem;
+  padding-top: 0.35rem;
+  margin-bottom: 0rem;
+}
+
+.commentText {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  
+}
+.infoCom {
+  font-size: 0.7rem;
+  margin-top: 0;
+}
+
+.subCommentInfo {
+  margin-left: 2rem;
+  display: block;
+}
+
+.numberOfComments {
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 0.7rem 0.5 ;
+}
+.info {
+  color:rgb(59, 59, 59)
+}
+
+p {
+  margin-left: 0rem;
+}
+.selfTextBeginning {
+  display: block;
+}
+
+
+/* -------------Subreddits & dropdown button---------------------------------------------- */
+
+.navbar {
+  overflow: auto;
+  background-color: #333;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+}
+.dropdown {
+  float:inline-end;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.dropdown .dropbtn {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0.5rem; /* Important for vertical align on mobile phones */
+  
+}
+  
+.navbar .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  left: 0;
+  position: absolute;
+  background-color: rgb(83, 83, 83);
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Links inside the dropdown */
+.dropdown-button {
+  float: none;
+  color: black;
+  padding: 3px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  margin-top: 0;
+  
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-button:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+  
+}
+
+.subreddit-icon {
+  width: 6vh;
+}
+
+.button {
+  display:block;
+  text-align: center;
+}
+
+.subreddit-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 880px) {
+  .dropdown-button {
+    padding: 5px;
+  }
+  .subreddit-name {
+    font-size: 0.5rem;
+  }
+  .subreddit-icon {
+    width: 3vh;
+  }
+  .dropdown:hover .dropdown-content {
+    justify-content:space-evenly;
+  }
+}
+/* ---------------------scrollTop button------------------------------------ */
+
+.scrollTop {
+  position: fixed; 
+  width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.2s;
+  opacity: 0.8;
+ 
+  text-align: center;
+}
+
+.scrollTop:hover{
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* -------------------------------------------------------------------- */
+.StartMessage {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+/* ---------------Skeleton----------------------------------------------------- */
+.list {
+  display: block;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.section-title {
+  margin-top: 30px;
+}
+
+.card {
+  width: calc(70% - 10px);
+  margin: 20px 0;
+
+}
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+.card-image {
+  width: 100%;
+}
+.channel-image {
+  border-radius: 100%;
+  padding: 0, 10px, 0, 0; 
+  width: 40px;
+  height: 40px;  
+}
+.card-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.card-channel {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}

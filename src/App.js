@@ -1,58 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect, HashRouter, BrowserHistory  
+} from 'react-router-dom'
+import {SubredditsList} from './features/subreddits/subredditList'
+import {PostDetailRender} from './features/posts/singlePost'
+import {SingleSearchPostRender} from './features/searchPosts/singleSearchPost'
+import { PostsList } from './features/posts/PostsList'
+import {SearchPostsList} from './features/searchPosts/searchPosts'
+import {StartMessage} from './features/posts/startMessage'
+// import {BrowserHistory } from 'react-router'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    <Router  > 
+      <div className="App">
+      <div className="App-navbar">
+        <SubredditsList />
+      </div>
+        <Switch>
+          <Route  exact path="/" component={StartMessage}/>
+          <Route  exact path="/search" component={SearchPostsList}/>
+          <Route exact path="/posts" component={PostsList} />
+          <Route  path="/posts/:postId" component={PostDetailRender}/>
+          <Route  path="/search/:postId" component={SingleSearchPostRender}/>
+          <Redirect to="/" />
+        </Switch>
+      </div>
+      
+    </Router>
+  )
 }
+// Router.run( Router.HistoryLocation, function () {
+//   React.render(<App/>, document.body);
+// });
+<HashRouter>
+  <App/>
+</HashRouter>
 
-export default App;
+export default App

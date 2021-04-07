@@ -48,7 +48,7 @@ export function PostDetailRender({match}) {
                 <p className='info'>{moment.unix(post.created_utc).fromNow()}</p>
                 <p className='info likes'><RiHeart3Line/> {post.ups}</p>
               
-                <p className='info' onClick={()=> (onToggleComments(post.permalink), window.scrollTo(0, 0))} > <FaRegComments/> {post.num_comments} </p>
+                <p className='info' onClick={()=> (onToggleComments(post.permalink))} > <FaRegComments/> {post.num_comments} </p>
             </div>
            
         <RenderComments post={post}/>

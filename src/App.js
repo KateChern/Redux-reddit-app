@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect, HashRouter, BrowserHistory  
+  Redirect, HashRouter 
 } from 'react-router-dom'
 import {SubredditsList} from './features/subreddits/subredditList'
 import {PostDetailRender} from './features/posts/singlePost'

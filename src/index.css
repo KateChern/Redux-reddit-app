@@ -134,7 +134,7 @@ p {
 
 .comment-metadata {
   display: flex;
-  justify-content: start; 
+  justify-content:flex-start; 
 }
 .comment-author {
   font-size: 0.75rem;

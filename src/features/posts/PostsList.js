@@ -37,7 +37,7 @@ export let PostContent = ({postId}) => {
   return (
     <article  className="post-content" key={post.id}>
       <div className="postContent">
-      <Link className="postLink" to={`/posts/${post.id}`}  onClick={()=> (onToggleComments(post.permalink), window.scrollTo(0, 0))}  >
+      <Link className="postLink" to={`/posts/${post.id}`}  onClick={()=> (onToggleComments(post.permalink))}  >
         <div className="userInfo">
           {post.author !== '[deleted]' ? <UserInfo postAuthor={post.author} /> : <UserInfo postAuthor={'AutoModerator'} /> }
           <h5 id='home' className="userName"> by  {post.author}</h5>
@@ -60,7 +60,7 @@ export let PostContent = ({postId}) => {
             <p className='info'>{moment.unix(post.created_utc).fromNow()}</p>
             <p className='info likes'><RiHeart3Line/> {post.ups}</p>
             <Link className="postLink" to={`/posts/${post.id}`} >
-            <p className='info' onClick={()=> (onToggleComments(post.permalink), window.scrollTo(0, 0))} > <FaRegComments/> {post.num_comments} </p>
+            <p className='info' onClick={()=> (onToggleComments(post.permalink))} > <FaRegComments/> {post.num_comments} </p>
             </Link>
         </div>
       </div>

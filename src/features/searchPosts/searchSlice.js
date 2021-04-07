@@ -8,8 +8,7 @@ const searchAdapter = createEntityAdapter(
 )
 const initialState = searchAdapter.getInitialState({
     status: 'idle',
-    error: null,
-    searchInput: '',
+    error: null
   })
   
   export const API_ROOT = 'https://www.reddit.com';
@@ -20,15 +19,10 @@ const initialState = searchAdapter.getInitialState({
     return dataRow.data.children.map((post) => post.data)
   })
   
-  
-  
   const searchSlice = createSlice({
     name: 'search',
     initialState,
     reducers: {
-      setSearchInput(state, action) {
-        state.searchInput = action.payload;
-      }
     },
     extraReducers: {
       [fetchSearch.pending]: (state, action) => {

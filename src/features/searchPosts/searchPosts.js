@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import {GoUpButton} from '../goUpButton'
 import SkeletonCard from '../loadingForms/loading'
 
-
 let PostContent = ({postId}) => {
     const dispatch = useDispatch()
     const post = useSelector((state) => selectSearchPostById(state, postId))
@@ -19,8 +18,9 @@ let PostContent = ({postId}) => {
       const fetchComments = dispatch(getComments(permalink)) 
       return fetchComments;
     };
+    
     const [readMore, setReadMore]=useState(false);
-  
+    
     const linkName= readMore?'Read Less << ':'Read More >> '  
     let postText
     if(post.selftext && post.selftext.length >200 && !readMore) {
@@ -31,7 +31,7 @@ let PostContent = ({postId}) => {
   
     if (post) {
     return (
-      <article  className="post-content" key={post.id}>
+      <article  className="post-content" key={post.id} >
         <div className="postContent">
         <Link className="postLink" to={`/search/${post.id}`} onClick={()=> (onToggleComments(post.permalink))} >
           <div className="userInfo">

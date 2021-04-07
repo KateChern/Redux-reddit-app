@@ -26,7 +26,7 @@ useEffect(()=> {
       userContent = 
       <img 
          src={`${user.snoovatar_img && user.snoovatar_img.length !==0 ? user.snoovatar_img : avatar }`}
-         alt={`${user.snoovatar_img && user.snoovatar_img.length !==0 ? user.snoovatar_img : '../users/avatar1.png' } profile`}
+         alt='avatar'
          className="avatar-profile-image"  />
    
     } else if (userStatus === 'failed'){

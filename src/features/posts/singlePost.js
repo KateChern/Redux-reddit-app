@@ -32,7 +32,7 @@ export function PostDetailRender({match}) {
         <article  className="post-content" key={post.id}>
             <div className="postContent">
                 <div className="userInfo">
-                    <UserInfo postAuthor={post.author} />
+                {post.author !== '[deleted]' ? <UserInfo postAuthor={post.author} alt='avatar'/> : <UserInfo postAuthor= 'AutoModerator' /> }
 
                     <h5 id='home' className="userName"> by  {post.author}</h5>
                  </div>

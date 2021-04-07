@@ -39,7 +39,7 @@ export const SubredditsList = () => {
     let subredditsList 
     
     if (postStatus=== 'loading') {
-        subredditsList = <div>Loading...</div>
+        subredditsList = <div className="dropdown-content">Loading...</div>
     } 
     else if(postStatus === 'succeeded'){     
     subredditsList = <div className="dropdown-content">{subreddits.map((subreddit)=> 

@@ -3,19 +3,20 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect, HashRouter 
+  Redirect
 } from 'react-router-dom'
 import {SubredditsList} from './features/subreddits/subredditList'
 import {PostDetailRender} from './features/posts/singlePost'
 import {SingleSearchPostRender} from './features/searchPosts/singleSearchPost'
-import { PostsList } from './features/posts/PostsList'
+import {PostsList } from './features/posts/PostsList'
 import {SearchPostsList} from './features/searchPosts/searchPosts'
 import {StartMessage} from './features/posts/startMessage'
-// import {BrowserHistory } from 'react-router'
+
 
 function App() {
   return (
-    <Router  > 
+
+    <Router > 
       <div className="App">
       <div className="App-navbar">
         <SubredditsList />
@@ -29,15 +30,8 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </div>
-      
     </Router>
   )
 }
-// Router.run( Router.HistoryLocation, function () {
-//   React.render(<App/>, document.body);
-// });
-<HashRouter>
-  <App/>
-</HashRouter>
 
 export default App

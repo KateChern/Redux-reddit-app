@@ -28,7 +28,7 @@ export function PostDetailRender({match}) {
     if (!post) {
         return (
           <section>
-            {/* <h2></h2> */}
+            <h2>Post not found</h2>
           </section>
         )
       }

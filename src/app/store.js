@@ -14,7 +14,6 @@ export default configureStore({
     subreddits: subredditReducer,
     comments: commentsReducer,
     search: searchReducer
-    // singlePost: postReducer,
-   
+    
   }
 })

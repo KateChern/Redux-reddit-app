@@ -9,7 +9,6 @@ export const UserInfo = ({postAuthor}) => {
   const dispatch = useDispatch()
   const userStatus = useSelector(state => state.users.userStatus)
   const error = useSelector((state) => state.users.userError)
-  
   const user = useSelector((state) => selectUsersById(state, postAuthor))
 
 useEffect(()=> {

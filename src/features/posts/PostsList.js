@@ -1,7 +1,8 @@
 import React, { useEffect, useState }  from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {UserInfo} from '../avatar/avatar'
-import { fetchPosts, selectPostIds,
+import { fetchPosts, 
+  selectSelectedSubredditPostIds,
   selectPostById}  from './postsSlice'
 import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
@@ -17,9 +18,9 @@ import SkeletonCard from '../loadingForms/loading'
 export let PostContent = ({postId}) => {
   const dispatch = useDispatch()
   const post = useSelector((state) => selectPostById(state, postId))
+
   const onToggleComments =  (permalink) => { 
-    
-  const fetchComments = dispatch(getComments(permalink)) 
+    const fetchComments = dispatch(getComments(permalink)) 
     return fetchComments;
   };
   const [readMore, setReadMore]=useState(false);
@@ -72,7 +73,7 @@ export let PostContent = ({postId}) => {
 export const PostsList = () => {
   const dispatch = useDispatch()
   const postStatus = useSelector(state => state.posts.status)
-  const orderedPostIds = useSelector(selectPostIds)
+  const orderedPostIds = useSelector(selectSelectedSubredditPostIds)
   const error = useSelector((state) => state.posts.error)
   const selectedSubreddit = useSelector(state => state.posts.selectedSubreddit)
 

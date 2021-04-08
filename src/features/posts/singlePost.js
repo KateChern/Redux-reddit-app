@@ -1,7 +1,7 @@
-import React  from 'react'
+import React , { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { fetchSinglePost, selectPostById } from "./postsSlice";
 import {UserInfo} from '../avatar/avatar'
-import {selectPostById} from './postsSlice'
 import moment from 'moment';
 import {FaRegComments} from 'react-icons/fa'
 import {RiHeart3Line} from 'react-icons/ri'
@@ -14,6 +14,11 @@ export function PostDetailRender({match}) {
     const { postId } = match.params
     const post = useSelector((state) => selectPostById(state, postId))
     const dispatch = useDispatch()
+
+    useEffect(() => {
+      dispatch(fetchSinglePost(postId));
+    }, [dispatch, postId]);
+
     const onToggleComments =  (permalink) => { 
     
         const fetchComments = dispatch(getComments(permalink)) 
@@ -23,7 +28,7 @@ export function PostDetailRender({match}) {
     if (!post) {
         return (
           <section>
-            <h2>Post not found!</h2>
+            {/* <h2></h2> */}
           </section>
         )
       }

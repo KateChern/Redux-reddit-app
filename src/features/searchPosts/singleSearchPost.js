@@ -1,7 +1,7 @@
-import React  from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {UserInfo} from '../avatar/avatar'
-import {selectSearchPostById} from '../searchPosts/searchSlice'
+import {selectSearchPostById, fetchSingleSearchPost} from '../searchPosts/searchSlice'
 import moment from 'moment';
 import {FaRegComments} from 'react-icons/fa'
 import {RiHeart3Line} from 'react-icons/ri'
@@ -10,20 +10,25 @@ import {RenderComments} from '../comments/comments'
 import {GoUpButton} from '../goUpButton'
 import ReactMarkdown from 'react-markdown';
 
+
 export function SingleSearchPostRender({match}) {
     const { postId } = match.params
     const post = useSelector((state) => selectSearchPostById(state, postId))
     const dispatch = useDispatch()
+
     const onToggleComments =  (permalink) => { 
-    
         const fetchComments = dispatch(getComments(permalink)) 
         return fetchComments;
       };
 
+    useEffect(() => {
+        dispatch(fetchSingleSearchPost(postId));
+      }, [dispatch, postId]);
+  
     if (!post) {
         return (
           <section>
-            <h2>Post not found!</h2>
+            {/* <h2>Post not found!</h2> */}
           </section>
         )
       }

@@ -46,9 +46,9 @@ p {
 .userInfo {
   display: flex;  
 }
-/* .image {
+.image {
   width: 100%;
-} */
+}
 
 .post-image {
   transform: scale(2,2);

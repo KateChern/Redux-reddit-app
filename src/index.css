@@ -333,8 +333,9 @@ p {
 
   }  
   input {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-right: 0.4rem;
+    /* width: 14vh; */
   }
   .info {
     font-size: 0.7rem;

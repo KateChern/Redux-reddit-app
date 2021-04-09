@@ -57,6 +57,7 @@ let PostContent = ({postId}) => {
               <Link className="postLink" to={`/search/${post.id}`} >
               <p className='info' onClick={()=> (onToggleComments(post.permalink))} > <FaRegComments/> {post.num_comments} </p>
               </Link>
+              <GoUpButton />
           </div>
         </div>
         
@@ -84,7 +85,7 @@ export const SearchPostsList = () => {
       return (
         <section>
           {content}
-          <GoUpButton />
+          
         </section>
       ) 
     }

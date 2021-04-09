@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
 import {RiHeart3Line} from 'react-icons/ri'
 import 'github-markdown-css'
-import {GoUpButton} from '../goUpButton'
+
 
 
 const CommentContent = ({commentId}) => {

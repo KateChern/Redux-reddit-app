@@ -134,7 +134,7 @@ p {
 
 @media only screen and (max-width: 880px) {
   .post-content {
-    max-width: 40vh;
+    max-width: 42vh;
     margin-top: 0.7rem;
     overflow: hidden;
   }

@@ -325,7 +325,7 @@ p {
     justify-content:space-evenly;
   }
 }
-@media only screen and (max-width: 411px) {
+@media only screen and (max-width: 880px) {
   .dropdown .dropbtn {
     margin: 0.2rem 0 0 0 ;
     font-size: 1rem;

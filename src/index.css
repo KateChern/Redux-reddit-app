@@ -132,7 +132,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 411px) {
+@media only screen and (max-width: 880px) {
   .post-content {
     max-width: 39.5vh;
     margin-top: 0.7rem;
@@ -374,7 +374,7 @@ p {
     opacity: 0.2;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 880px) {
  
   .scrollTop {
  

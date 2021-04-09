@@ -338,6 +338,10 @@ p {
   .info {
     font-size: 0.7rem;
   }
+  .subreddit-icon {
+    display: none;
+  }
+  
 }
 /* ---------------------scrollTop button------------------------------------ */
 

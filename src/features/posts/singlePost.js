@@ -40,6 +40,7 @@ export function PostDetailRender({match}) {
                 {post.author !== '[deleted]' ? <UserInfo postAuthor={post.author} alt='avatar'/> : <UserInfo postAuthor= 'AutoModerator' /> }
 
                     <h5 id='home' className="userName"> by  {post.author}</h5>
+                    {/* <GoUpButton /> */}
                  </div>
                 <hr ></hr> 
                 <h4 className="post-title">{post.title}</h4>
@@ -54,12 +55,13 @@ export function PostDetailRender({match}) {
                 <p className='info likes'><RiHeart3Line/> {post.ups}</p>
               
                 <p className='info' onClick={()=> (onToggleComments(post.permalink))} > <FaRegComments/> {post.num_comments} </p>
+                <GoUpButton className="scrollTopInSingleP"/>
             </div>
-           
+          
         <RenderComments post={post}/>
         
       </div>
-      <GoUpButton />
+     
     </article>
      )}
     

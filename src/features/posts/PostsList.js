@@ -63,9 +63,10 @@ export let PostContent = ({postId}) => {
             <Link className="postLink" to={`/posts/${post.id}`} >
             <p className='info' onClick={()=> (onToggleComments(post.permalink))} > <FaRegComments/> {post.num_comments} </p>
             </Link>
+            <GoUpButton />
         </div>
       </div>
-      
+     
     </article>
   )
 }}
@@ -100,7 +101,7 @@ export const PostsList = () => {
       <section>
         <h2 className='subredditTitle'>{selectedSubreddit}</h2>
         {content}
-        <GoUpButton />
+       
       </section>
     ) 
   }

@@ -5,6 +5,9 @@ import Skeleton from 'react-loading-skeleton';
 import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
 import {RiHeart3Line} from 'react-icons/ri'
+import 'github-markdown-css'
+import {GoUpButton} from '../goUpButton'
+
 
 const CommentContent = ({commentId}) => {
   const comment = useSelector((state) => selectCommentsById(state, commentId))
@@ -22,7 +25,9 @@ const CommentContent = ({commentId}) => {
       <div className='subCommentInfo' >{comment.replies? comment.replies.data.children.map(com => (
           <div> 
               <p className="comment-author">{com.data.author}</p>
-              <ReactMarkdown className='commentText' source={com.data.body} />
+                <div className='markdown-body'> 
+                  <ReactMarkdown className='commentText' source={com.data.body} />
+                </div>
               <div className='commentInfo'>
                   <p className="infoCom">{moment.unix(com.data.created_utc).fromNow()}</p>
                   <div className='infoCom likes'> <RiHeart3Line/> {com.data.ups} </div> 
@@ -55,7 +60,11 @@ export const RenderComments = () => {
 }  else if (commentStatus === 'failed'){
      text= <div>{errorCom}</div>
      }
-   return (<div>
+   return ( 
+            <div>
               {text}
-          </div>)
+             
+          </div>
+          
+           )
    }
